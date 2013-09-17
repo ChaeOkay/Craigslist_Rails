@@ -1,8 +1,8 @@
 <div>
   <h3>Housing</h3>
   <% unless @categories.nil? %>
-    <% @categories.each do |c| %>
-      <li><a href='/categories/<%=c.id%>' ><%= c.description %></a></li>
+    <% @categories.each do |category| %>
+      <li><%= link_to category.description, category_posts_path(category) %></li>
     <% end %>
   <% end %>
 </div>
