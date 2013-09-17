@@ -1,0 +1,9 @@
+<div>
+  <h3><%= link_to "Housing", root_path %> < <%= @category.description %></h3>
+  <p><%= link_to "Create New Post", new_category_post_path(@category) %><p>
+  <% unless @posts.nil? %>
+      <% @posts.each do |post| %>
+        <li><a href='/categories/posts/<%=post.id%>' ><%= post.description %></a></li>
+      <% end %>
+    <% end %>
+</div>
