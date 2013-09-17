@@ -1,31 +1,22 @@
 <div>
-  <h3><%= link_to "Housing", root_path %> < New Posting </h3>
-  <form name="post" action="/categories/<%= @category %>/posts/new" method="post">
-    <label>Title:</label>
-    <br />
-    <input type="text" name="title">
-    <br />
-    <br />
-    <label>Rent:</label>
-    <br />
-    <input type="text" name="rent">
-    <br />
-    <br />
-    <label>Area:</label>
-    <br />
-    <input type="text" name="area">
-    <br />
-    <br />
-    <label>Description:</label>
-    <br />
-    <textarea name="description"></textarea>
-    <br />
-    <br />
-    <label>Email:</label>
-    <br />
-    <input type="text" name="email">
-    <br />
-    <br />
-    <input type="submit" value="Submit">
-  </form>
+  <h3><%= link_to "Housing", root_path %> < <%= link_to @category.description, category_posts_path(@category)  %> < New Posting </h3>
+
+  <%= form_for @post, url: {action: "create" } do |f| %>
+    <%= f.label :title %></br>
+    <%= f.text_field :title %></br>
+        </br>
+    <%= f.label :rent %></br>
+    <%= f.text_field :rent %></br>
+        </br>
+    <%= f.label :area %></br>
+    <%= f.text_field :area %></br>
+        </br>
+    <%= f.label :description %></br>
+    <%= f.text_area :description, size: "60x12" %>
+        </br>
+    <%= f.label :email %></br>
+    <%= f.text_field :email %></br>
+        </br>
+    <%= f.submit %>
+  <% end %>
 </div>
