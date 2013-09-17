@@ -1,1 +1,8 @@
-"Categories Index"
+<div>
+  <h3>Housing</h3>
+  <% unless @categories.nil? %>
+    <% @categories.each do |c| %>
+      <li><a href='/categories/<%=c.id%>' ><%= c.description %></a></li>
+    <% end %>
+  <% end %>
+</div>
