@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    @category = Category.find(params[:category_id])
     @post = Post.create( {title: params[:title],
                   description: params[:description],
                   email: params[:email],
@@ -17,6 +18,7 @@ class PostsController < ApplicationController
                   rent: params[:rent],
                   area: params[:area],
                   key: "wzdzihu7832" } )
+    redirect_to category_posts_path(@category.id)
   end
 
   def show
