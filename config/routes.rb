@@ -4,4 +4,6 @@ CraiglistRails::Application.routes.draw do
     resources :posts
   end
 
+  root to: "categories#index"
+
 end
