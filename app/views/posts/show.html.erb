@@ -1,0 +1,6 @@
+<div>
+  <h3><%= link_to "Housing", root_path %> < <%= link_to @category.description, category_posts_path(@category)  %> < <%= @post.title %> - $<%= @post.rent %> - <%= @post.area %>sq.ft.</h3>
+
+  <p><%= @post.description%></p>
+  <p>Reply to: <%= @post.secure_email %></p>
+</div>

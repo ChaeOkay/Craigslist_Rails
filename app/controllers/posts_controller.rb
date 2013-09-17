@@ -18,4 +18,9 @@ class PostsController < ApplicationController
                   area: params[:area],
                   key: "wzdzihu7832" } )
   end
+
+  def show
+    @category = Category.find(params[:category_id])
+    @post = Post.find(params[:id])
+  end
 end
